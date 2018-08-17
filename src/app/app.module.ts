@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     MatToolbarModule,
     MatCardModule,
-    MatButtonModule  
+    MatButtonModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })  
   ],
   providers: [],
   bootstrap: [AppComponent]
